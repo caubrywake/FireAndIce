@@ -1,0 +1,335 @@
+Peyto Glacier Observation file
+###### Version: CRHM 07/02/20 - debris-cover, katabatic and update Albedo variable  Creation: 2021-01-22 15:31
+Dimensions:
+######
+nhru 1
+nlay 3
+nobs 1
+######
+Macros:
+######
+'lapse_rate_Monthly'
+'declparam, lapse_rate, NHRU, "[0.75]", 0, 2, "temperature lapse rate", (°C/100m)'
+'declvar, lapse_rate_Mthly, NHRU, "temperature lapse rate", (°C/100m)'
+'command'
+' if(LASTINT)'
+' if(JULIAN >= 274 && JULIAN < 305)'
+' lapse_rate[hh] = 0.81'
+' else if (JULIAN >= 305 && JULIAN < 335)'
+' lapse_rate[hh] = 0.83'
+' else if (JULIAN >= 335 && JULIAN < 365)'
+' lapse_rate[hh] = 0.73'
+' else if (JULIAN >= 1 && JULIAN < 32)'
+' lapse_rate[hh] = 0.66'
+' else if (JULIAN >= 32 && JULIAN < 60)'
+' lapse_rate[hh] = 0.72'
+' else if (JULIAN >= 60 && JULIAN < 91)'
+' lapse_rate[hh] = 0.8'
+' else if (JULIAN >= 91 && JULIAN < 121)'
+' lapse_rate[hh] = 0.85'
+' else if (JULIAN >= 121 && JULIAN < 152)'
+' lapse_rate[hh] = 0.8'
+' else if (JULIAN >= 152 && JULIAN < 182)'
+' lapse_rate[hh] = 0.78'
+' else if (JULIAN >= 182 && JULIAN < 213)'
+' lapse_rate[hh] = 0.6'
+' else if (JULIAN >= 213 && JULIAN < 244)'
+' lapse_rate[hh] = 0.57'
+' else if (JULIAN >= 244 && JULIAN < 274)'
+' lapse_rate[hh] = 0.76'
+' endif'
+' endif'
+' endif'
+' endif'
+' endif'
+' endif'
+' endif'
+' endif'
+' endif'
+' endif'
+' endif'
+' endif'
+' lapse_rate_Mthly[hh] = lapse_rate[hh]'
+' endif'
+'end'
+######
+Observations:
+######
+D:\FireandIce\data_process\ice_aws\AthabascaIce_1hr.obs
+D:\FireandIce\data_process\moraine_aws\moraineAWS_precip_hourly.obs
+######
+Dates:
+######
+2014 9 12
+2020 9 19
+######
+Modules:
+######
+albedo_obs CRHM 11/22/05
+global CRHM 12/19/19
+obs CRHM 04/17/18
+lapse_rate_Monthly Macro 04/20/06
+basin CRHM 02/24/12
+calcsun CRHM 10/01/13
+Slope_Qsi#1 CRHM 07/14/11
+walmsley_wind CRHM 07/30/08
+netall CRHM 03/22/16
+longVt#2 CRHM 02/10/16
+evap CRHM 09/26/13
+CanopyClearing#3 CRHM 04/05/19
+pbsmSnobal#1 CRHM 01/05/17
+SnobalCRHM#1 CRHM 11/21/16
+glacier#5 CRHM 07/02/20
+######
+Parameters:
+###### 'basin' parameters always first
+Shared basin_area <1E-6 to 1E9>
+1 
+Shared hru_area <1E-6 to 1E9>
+1 
+Shared hru_ASL <0 to 360>
+0 
+Shared hru_elev <0 to 1E5>
+2130 
+Shared hru_GSL <0 to 90>
+0 
+Shared hru_lat <-90 to 90>
+52.2 
+Shared Ht <0.001 to 100>
+0.1 
+Shared inhibit_evap <0 to 1>
+0 
+Shared lapse_rate <0 to 2>
+0.75 
+Shared Zwind <0.01 to 100>
+10 
+albedo_obs Albedo_Value <0 to 1>
+0.1 
+basin basin_name
+'Peyto2010' 
+basin hru_names
+'Firn1' 
+basin INIT_STATE
+'' 
+basin Loop_to
+'' '' 
+basin RapidAdvance_to
+'' 
+basin RUN_END <0 to 1E5>
+0 
+basin RUN_ID <-1E8 to 1E8>
+1 
+basin RUN_START <0 to 1E5>
+0 
+basin StateVars_to_Update
+' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' 
+basin TraceVars
+' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' 
+CanopyClearing Alpha_c <0.05 to 0.2>
+0.1 
+CanopyClearing B_canopy <0 to 0.2>
+0.038 
+CanopyClearing CanopyClearing <0 to 1>
+1 
+CanopyClearing LAI <0.1 to 20>
+0.1 
+CanopyClearing Sbar <0 to 100>
+6.6 
+CanopyClearing unload_t <-10 to 20>
+1 
+CanopyClearing unload_t_water <-10 to 20>
+4 
+CanopyClearing Z0snow <0.0001 to 0.01>
+0.0055 
+CanopyClearing Zref <0.01 to 100>
+1.5 
+CanopyClearing Zvent <0 to 1>
+0.75 
+evap evap_type <0 to 2>
+0 
+evap F_Qg <0 to 1>
+0.1 
+evap rs <0 to 0.01>
+0 
+glacier debris_h <0 to 10>
+0 
+glacier delay_melt <0 to 366>
+0 
+glacier Densification <0 to 1>
+1 
+glacier Densification_550 <0 to 1000>
+150 
+glacier Densification_above_550 <0 to 1000>
+50 
+glacier Elev_Adj_glacier_surf <0 to 1>
+1 
+glacier firnLag <0 to 1E4>
+0 
+glacier firnstorage <0 to 200>
+5 
+glacier firn_Albedo <0.2 to 0.9>
+0.5 
+glacier firn_dens_init <0 to 1000>
+0 
+0 
+0 
+glacier firn_h_init <0 to 100>
+0 
+0 
+0 
+glacier iceLag <0 to 1E4>
+0 
+glacier icestorage <0 to 200>
+0.47 
+glacier ice_Albedo <0.2 to 0.9>
+0.3 
+glacier ice_dens <200 to 1000>
+900 
+glacier ice_init <0 to 1E6>
+1E6 
+glacier inhibit_firnmelt <0 to 1>
+0 
+glacier inhibit_icenmelt <0 to 1>
+0 
+glacier katabatic_lapse_rate <0 to 2>
+0.005 
+glacier SWEAA <0.1 to 10>
+0.1 
+glacier SWELag <0 to 1E4>
+0 
+glacier SWEstorage <0 to 200>
+4.2 
+glacier SWE_to_firn_Julian <0 to 366>
+258 
+glacier TKMA <-50 to 50>
+0 
+glacier topo_elev_init <0 to 1000>
+0 
+glacier T_threshold <-30 to 30>
+1 
+glacier use_debris <0 to 1>
+0 
+global Time_Offset <-12 to 12>
+0.73 
+longVt epsilon_s <0 to 1>
+0.98 
+longVt Vt <0 to 1>
+0 
+obs catchadjust <0 to 3>
+0 
+obs ClimChng_flag <0 to 1>
+0 
+obs ClimChng_precip <0 to 10>
+1.3 
+obs ClimChng_t <-50 to 50>
+0 
+obs ElevChng_flag <0 to 1>
+0 
+obs HRU_OBS <1 to 100>
+1 
+1 
+1 
+1 
+1 
+obs obs_elev <0 to 1E5>
+2130 
+2130 
+obs ppt_daily_distrib <0 to 1>
+1 
+obs precip_elev_adj <-1 to 1>
+0 
+obs snow_rain_determination <0 to 2>
+2 
+obs tmax_allrain <-10 to 10>
+0 
+obs tmax_allsnow <-10 to 10>
+-2 
+pbsmSnobal A_S <0 to 2>
+1 
+pbsmSnobal distrib <-10 to 10>
+1 
+pbsmSnobal fetch <300 to 1E4>
+1116 
+pbsmSnobal inhibit_bs <0 to 1>
+1 
+pbsmSnobal inhibit_subl <0 to 1>
+1 
+pbsmSnobal N_S <1 to 500>
+1 
+SnobalCRHM hru_F_g <-50 to 50>
+0 
+SnobalCRHM hru_rho_snow <50 to 1000>
+100 
+SnobalCRHM hru_T_g <-50 to 50>
+0 
+SnobalCRHM KT_sand <0.01 to 3>
+0.08 
+SnobalCRHM max_h2o_vol <0.0001 to 0.2>
+0.0001 
+SnobalCRHM max_z_s_0 <0 to 0.35>
+0.1 
+SnobalCRHM rain_soil_snow <0 to 1>
+1 
+SnobalCRHM relative_hts <0 to 1>
+0 
+SnobalCRHM T_g_or_G_flux <0 to 1>
+0 
+SnobalCRHM z_0 <0.0001 to 0.1>
+0.0055 
+SnobalCRHM z_g <0.1 to 1>
+0.1 
+SnobalCRHM z_T <0 to 10>
+2 
+SnobalCRHM z_u <0 to 10>
+2 
+walmsley_wind A <0 to 4.4>
+0 
+walmsley_wind B <0 to 2>
+0 
+walmsley_wind L <40 to 1E6>
+40 
+walmsley_wind Walmsley_Ht <-1000 to 1000>
+10 
+######
+Initial_State
+######
+######
+Final_State
+######
+######
+Summary_period
+######
+Daily
+######
+Log_Time_Format
+######
+MS_time
+######
+Display_Variable:
+######
+global Qdflat 1
+longVt tau 1
+obs hru_ea 1
+obs hru_rh 1
+obs hru_t 1
+######
+Display_Observation:
+######
+######
+Log_All
+######
+TChart:
+######
+- - D:\SmokeImpactMelt\CRHMModel\Albedo_032519.pr
+ 
+D:\SmokeImpactMelt\CRHMModel\Albedo_032519.prj
+ 
+(W/m^2)
+ 
+ 
+ 
+######
+Auto_Run
+#####
+Auto_Exit
+#####

@@ -1,0 +1,280 @@
+Peyto Glacier Observation file
+###### Version: CRHM 03/09/19  Creation: 2021-01-25 15:37
+Dimensions:
+######
+nhru 1
+nlay 3
+nobs 1
+######
+Macros:
+######
+######
+Observations:
+######
+D:\3_FireandIce\c_CRHM\b_MainSimulation\obsfile\iceAWS_TRHUQsiQliPalb_modRad_modAlb.obs
+######
+Dates:
+######
+2014 9 13
+2020 9 18
+######
+Modules:
+######
+albedo_obs CRHM 11/22/05
+global CRHM 12/19/19
+obs CRHM 04/17/18
+basin CRHM 02/24/12
+calcsun CRHM 10/01/13
+walmsley_wind CRHM 07/30/08
+netall CRHM 03/22/16
+evap CRHM 09/26/13
+CanopyClearing CRHM 04/05/19
+pbsmSnobal#1 CRHM 01/05/17
+SnobalCRHM#1 CRHM 11/21/16
+glacier#5 CRHM 07/02/20
+######
+Parameters:
+###### 'basin' parameters always first
+Shared basin_area <1E-6 to 1E9>
+1 
+Shared hru_area <1E-6 to 1E9>
+1 
+Shared hru_ASL <0 to 360>
+0 
+Shared hru_elev <0 to 1E5>
+2200 
+Shared hru_GSL <0 to 90>
+0 
+Shared hru_lat <-90 to 90>
+51.32 
+Shared Ht <0.001 to 100>
+0.1 
+Shared inhibit_evap <0 to 1>
+0 
+Shared lapse_rate <0 to 2>
+0.75 
+Shared Zwind <0.01 to 100>
+10 
+albedo_obs Albedo_Value <0 to 1>
+0.17 
+basin basin_name
+'Basin' 
+basin hru_names
+'HRU' 
+basin INIT_STATE
+'' 
+basin Loop_to
+'' '' 
+basin RapidAdvance_to
+'' 
+basin RUN_END <0 to 1E5>
+0 
+basin RUN_ID <-1E8 to 1E8>
+1 
+basin RUN_START <0 to 1E5>
+0 
+basin StateVars_to_Update
+' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' 
+basin TraceVars
+' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' 
+CanopyClearing Alpha_c <0.05 to 0.2>
+0.1 
+CanopyClearing B_canopy <0 to 0.2>
+0.038 
+CanopyClearing CanopyClearing <0 to 1>
+1 
+CanopyClearing LAI <0.1 to 20>
+2.2 
+CanopyClearing Sbar <0 to 100>
+6.6 
+CanopyClearing unload_t <-10 to 20>
+1 
+CanopyClearing unload_t_water <-10 to 20>
+4 
+CanopyClearing Z0snow <0.0001 to 0.01>
+0.01 
+CanopyClearing Zref <0.01 to 100>
+1.5 
+CanopyClearing Zvent <0 to 1>
+0.75 
+evap evap_type <0 to 2>
+0 
+evap F_Qg <0 to 1>
+0.1 
+evap rs <0 to 0.01>
+0 
+glacier delay_melt <0 to 366>
+0 
+glacier Densification <0 to 1>
+0 
+glacier Densification_550 <0 to 1000>
+100 
+glacier Densification_above_550 <0 to 1000>
+100 
+glacier Elev_Adj_glacier_surf <0 to 1>
+1 
+glacier firnLag <0 to 1E4>
+0 
+glacier firnstorage <0 to 200>
+0.1 
+glacier firn_Albedo <0.2 to 0.9>
+0.9 
+glacier firn_dens_init <0 to 1000>
+220 
+220 
+220 
+glacier firn_h_init <0 to 100>
+0 
+0 
+0 
+glacier iceLag <0 to 1E4>
+0 
+glacier icestorage <0 to 200>
+0.1 
+glacier ice_Albedo <0.2 to 0.9>
+0.3 
+glacier ice_dens <200 to 1000>
+1000 
+glacier ice_init <0 to 1E6>
+5e4
+glacier inhibit_firnmelt <0 to 1>
+0 
+glacier inhibit_icenmelt <0 to 1>
+0 
+glacier SWEAA <0.1 to 10>
+0.3 
+glacier SWELag <0 to 1E4>
+0 
+glacier SWEstorage <0 to 200>
+0 
+glacier SWE_to_firn_Julian <0 to 366>
+244 
+glacier TKMA <-50 to 50>
+30 
+glacier topo_elev_init <0 to 1000>
+0 
+global Time_Offset <-12 to 12>
+0 
+0.3 
+obs catchadjust <0 to 3>
+0 
+obs ClimChng_flag <0 to 1>
+0 
+obs ClimChng_precip <0 to 10>
+1 
+obs ClimChng_t <-50 to 50>
+0 
+obs ElevChng_flag <0 to 1>
+0 
+obs HRU_OBS <1 to 100>
+1 
+2 
+5 
+5 
+5 
+obs obs_elev <0 to 1E5>
+2200 
+2200 
+obs ppt_daily_distrib <0 to 1>
+1 
+obs precip_elev_adj <-1 to 1>
+0 
+obs snow_rain_determination <0 to 2>
+0 
+obs tmax_allrain <-10 to 10>
+4 
+obs tmax_allsnow <-10 to 10>
+0 
+pbsmSnobal A_S <0 to 2>
+0.003 
+pbsmSnobal distrib <-10 to 10>
+0 
+pbsmSnobal fetch <300 to 1E4>
+1000 
+pbsmSnobal inhibit_bs <0 to 1>
+0 
+pbsmSnobal inhibit_subl <0 to 1>
+0 
+pbsmSnobal N_S <1 to 500>
+320 
+SnobalCRHM hru_F_g <-50 to 50>
+0 
+SnobalCRHM hru_rho_snow <50 to 1000>
+100 
+SnobalCRHM hru_T_g <-50 to 50>
+-4 
+SnobalCRHM KT_sand <0.01 to 3>
+0.08 
+SnobalCRHM max_h2o_vol <0.0001 to 0.2>
+0.0001 
+SnobalCRHM max_z_s_0 <0 to 0.35>
+0.1 
+SnobalCRHM rain_soil_snow <0 to 1>
+0 
+SnobalCRHM relative_hts <0 to 1>
+0 
+SnobalCRHM T_g_or_G_flux <0 to 1>
+0 
+SnobalCRHM z_0 <0.0001 to 0.1>
+0.001 
+SnobalCRHM z_g <0.1 to 1>
+0.1 
+SnobalCRHM z_T <0 to 10>
+1 
+SnobalCRHM z_u <0 to 10>
+1 
+walmsley_wind A <0 to 4.4>
+0 
+walmsley_wind B <0 to 2>
+0 
+walmsley_wind L <40 to 1E6>
+1000 
+walmsley_wind Walmsley_Ht <-1000 to 1000>
+0 
+######
+Initial_State
+######
+######
+Final_State
+######
+######
+Summary_period
+######
+Daily
+######
+Log_Time_Format
+######
+MS_time
+######
+Display_Variable:
+######
+glacier icemelt 1
+glacier SWEmelt 1
+glacier Xmelt_int 1
+glacier glacier_Albedo 1
+glacier Qe_kata 1
+glacier Qh_kata 1
+glacier Qmelt_kata 1
+glacier Qn_kata 1
+CanopyClearing Qlisn# 1
+CanopyClearing Qsisn# 1
+######
+Display_Observation:
+######
+TChart:
+######
+- - D:\FireandIce\CRHM\MainSimulation\Sim1_MeasME
+ 
+D:\FireandIce\CRHM\MainSimulation\Sim1_MeasMETMeasAlb_2021.prj
+ 
+(mm/d)
+ 
+ 
+ 
+######
+Auto_Run
+#####
+Auto_Exit
+#####
+Log_All
+#####
