@@ -1,18 +1,10 @@
-# Running CRHM
-install.packages("usethis")
-library(usethis)
-install.packages("backports")
-library(backports)
-install.packages("devtools")
-library(devtools)
-install_github("CentreForHydrology/CRHMr")
+# Running CRHM for transmissivty values
+
 library(CRHMr)
 
-
 ##########################################################################################
-####
-prjname <- 'D:/FireandIce/CRHM/TransmissivityCalculation/TransmissivitySimulation.prj'
-
-## 
+#### set project name
+prjname <- 'D:/3_FireandIce/c_CRHM/a_TransmissivityCalculation/TransmissivitySimulation.prj'
+##  run and export results
 result <- automatePrj(prjname)
-result<-runCRHM(CRHMfile = 'D:/FireandIce/CRHM/crhm_20200702/CRHM.exe',prjname, outFile='D:/FireandIce/CRHM/TransmissivityCalculation/TransmissivitySimulationOutputs.txt')
+result<-runCRHM(CRHMfile = 'D:/3_FireandIce/c_CRHM/z_crhm_version/CRHM.exe',prjname, outFile='D:/3_FireandIce/c_CRHM/a_TransmissivityCalculation/TransmissivitySimulationOutputs.txt')
